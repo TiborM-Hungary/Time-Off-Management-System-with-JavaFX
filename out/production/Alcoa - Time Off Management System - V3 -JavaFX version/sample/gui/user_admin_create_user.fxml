@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7fb3d5;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UserCreateUserController">
+   <children>
+      <Label alignment="CENTER" layoutX="32.0" layoutY="16.0" prefHeight="80.0" prefWidth="1213.0" style="-fx-background-color: #66a3ff;" text="Please add the details for the new user">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="150.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Employee Number:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="225.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Manager Employee Number:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="300.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Security Role:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="375.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Days Taken:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="450.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Username (e-mail):">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="650.0" layoutY="150.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Employee Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="650.0" layoutY="225.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Manager Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="650.0" layoutY="300.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="User Active:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="650.0" layoutY="375.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Days for year:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="650.0" layoutY="450.0" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #cce6ff;" text="Password:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField id="newUserEmployeeNumber" fx:id="newUserEmployeeNumber" layoutX="350.0" layoutY="150.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserManagerEmployeeNumber" fx:id="newUserManagerEmployeeNumber" layoutX="350.0" layoutY="225.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserDaysTaken" fx:id="newUserDaysTaken" layoutX="350.0" layoutY="375.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserUsername" fx:id="newUserUsername" layoutX="350.0" layoutY="450.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserEmployeeName" fx:id="newUserEmployeeName" layoutX="925.0" layoutY="150.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserManagerName" fx:id="newUserManagerName" layoutX="925.0" layoutY="225.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserDaysForTheYear" fx:id="newUserDaysForTheYear" layoutX="925.0" layoutY="375.0" prefHeight="47.0" prefWidth="200.0" />
+      <TextField id="newUserPassword" fx:id="newUserPassword" layoutX="925.0" layoutY="450.0" prefHeight="47.0" prefWidth="200.0" />
+      <Button id="newUserButtonCreateUser" fx:id="newUserCreateUser" layoutX="350.0" layoutY="561.0" mnemonicParsing="false" onAction="#createUser" prefHeight="60.0" prefWidth="200.0" text="Create User">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button id="newUserButtonCancel" fx:id="newUserCancel" layoutX="650.0" layoutY="561.0" mnemonicParsing="false" onAction="#cancel" prefHeight="60.0" prefWidth="200.0" text="Cancel">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="newUserSecurityRole" layoutX="350.0" layoutY="300.0" prefHeight="47.0" prefWidth="200.0" promptText="Select security role" />
+      <ComboBox fx:id="newUserStatus" layoutX="925.0" layoutY="300.0" prefHeight="47.0" prefWidth="200.0" promptText="Select Status" />
+   </children>
+</AnchorPane>
