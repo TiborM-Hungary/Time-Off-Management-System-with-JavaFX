@@ -147,11 +147,7 @@ public class Datasource {
     public static final int INDEX_USERS_USER_USERNAME = 15;
     public static final int INDEX_USERS_USER_PASSWORD = 16;
 
-
     public static final int INDEX_TIMEOFFS_ENTRY_NUMBER = 1;
-    //Should I store employeeNumber,employeeName,managerEmployeeNumber and  managerName in this table as well?
-    //Might be redundant...
-    //EmployeeNumber is needed for foreign key
     public static final int INDEX_TIMEOFFS_EMPLOYEE_NUMBER = 2;
     public static final int INDEX_TIMEOFFS_EMPLOYEE_NAME = 3;
     public static final int INDEX_TIMEOFFS_MANAGER_EMPLOYEE_NUMBER = 4;
@@ -257,7 +253,6 @@ public class Datasource {
     public static final String QUERY_TIMEOFFS_MANAGER_ALL_EMPLOYEE_TIMEOFFS =
             "SELECT * FROM " + TABLE_TIMEOFFS +
                     " WHERE " + TABLE_TIMEOFFS + "." + COLUMN_TIMEOFFS_MANAGER_EMPLOYEE_NUMBER + " = ?";
-
 
 
     /**
@@ -957,8 +952,8 @@ public class Datasource {
     }
 
     public void insertTimeOff(int employeeNumber, String employeeName, int managerEmployeeNumber, String managerName,
-                             String startOfLeave, String endOfLeave, String leaveStatus, String dateEntryCreated,
-                             String dateEntryLatestChange, String dateEntryLatestChangeBy, long durationOfLeave)
+                              String startOfLeave, String endOfLeave, String leaveStatus, String dateEntryCreated,
+                              String dateEntryLatestChange, String dateEntryLatestChangeBy, long durationOfLeave)
             throws SQLException {
 
         //THIS WORKS! DO NOT MESS WITH IT!
@@ -1007,7 +1002,7 @@ public class Datasource {
     public int updateUser(int employeeNumber, String employeeName, int managerEmployeeNumber, String managerName,
                           String securityRole, String userActive,
                           String userLatestChangeDate, String userLatestChangeByUser,
-                          int userDaysAvailable,int userDaysTaken, int userDaysForYear,
+                          int userDaysAvailable, int userDaysTaken, int userDaysForYear,
                           String userName, String password, int userID) throws SQLException {
 
         //Check, whether user already exist or not based on employeeNumber

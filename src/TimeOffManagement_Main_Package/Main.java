@@ -10,16 +10,9 @@ import TimeOffManagement_Main_Package.datasource.Datasource;
 
 public class Main extends Application {
 
-//    Stage window;
-//    Scene sceneLoginPage, sceneCreateUser, sceneTimeOffAdmin, scenetimeOffAdminSelectUser,
-//    scenetimeOffManager, sceneTimeOffUser, sceneUserAdmin;
-
     public static void main(String[] args) {
         launch(args);
     }
-
-    //*****************************************
-    //*****************************************
 
     //We would like to display data, when the application starts
     //Therefore we are making the connection when the app opens, and closing the connection when the app stops
@@ -45,40 +38,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-    //*****************************************
-    //*****************************************
-
-        //*********************************
-        //Login page loads
-
-        //Path only needs the parent directory then the file name
-        //https://stackoverflow.com/questions/19414453/how-to-get-resources-directory-path-programmatically
-//        Parent root = FXMLLoader.load(getClass().getResource("gui/login_page.fxml"));
-//        primaryStage.setTitle("ASSH - Time Off Management System");
-//        primaryStage.setScene(new Scene(root, 1280, 800));
-//        primaryStage.show();
-
-        //*********************************
-        //*********************************
-
-//        //User list time off page loads
-//        /**
-//         * We need to make sure, that UI has been built prior to trying to loading the data onto it
-//         * To do that we need to access the controller
-//         */
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui/time_off_user.fxml"));
-//        Parent root = loader.load();
-//        //We get an instance of the controller
-//        TimeOffUserController controller = loader.getController();
-//        //Query the artists
-//        controller.listTimeOffs();
-//
-//        primaryStage.setTitle("ASSH - Time Off Management System");
-//        primaryStage.setScene(new Scene(root, 1280, 800));
-//        primaryStage.show();
-
-
         /**
          * Main flow
          */
@@ -93,7 +52,6 @@ public class Main extends Application {
         primaryStage.setTitle("ASSH - TimeOff Management System V1.0");
         primaryStage.setScene(new Scene(root, 1280, 800));
         primaryStage.show();
-
 
     }
 }

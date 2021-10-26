@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7fb3d5;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimeOffManagement_Main_Package.controllers.LoginPageController">
+    <children>
+        <AnchorPane layoutX="698.0" layoutY="51.0" prefHeight="701.0" prefWidth="543.0" style="-fx-background-color: #d6eaf8;">
+            <children>
+                <TextField fx:id="userNameField" layoutX="80.0" layoutY="55.0" onKeyReleased="#handleKeyReleased" prefHeight="49.0" prefWidth="384.0" promptText="user@company.com">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <PasswordField fx:id="passwordField" layoutX="80.0" layoutY="117.0" onKeyReleased="#handleKeyReleased" prefHeight="49.0" prefWidth="384.0" promptText="password">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </PasswordField>
+                <Button fx:id="loginButton" layoutX="77.0" layoutY="198.0" mnemonicParsing="false" onAction="#LoginButtonClicked" prefHeight="49.0" prefWidth="384.0" style="-fx-background-color: #7fb3d5;" text="Login" textAlignment="CENTER" textFill="#101011">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="282.0" prefHeight="49.0" prefWidth="384.0" text="Time Management System" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label layoutX="80.0" layoutY="351.0" prefHeight="49.0" prefWidth="384.0" text="In case you forgot your password, please reach out to:" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="400.0" prefHeight="49.0" prefWidth="384.0" text="xyz@company.com" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="37.0" prefHeight="164.0" prefWidth="569.0" text="Welcome to the Time Management System!" textAlignment="CENTER" textFill="#fcfcfc">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="35.0" layoutY="118.0" prefHeight="189.0" prefWidth="644.0" text="This tool manages the time off requests." textFill="#fafaff">
+            <font>
+                <Font name="System Bold Italic" size="20.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

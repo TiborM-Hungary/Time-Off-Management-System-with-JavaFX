@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #7fb3d5;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimeOffManagement_Main_Package.controllers.DescriptionControllers">
+    <children>
+        <Label alignment="CENTER" layoutX="32.0" layoutY="16.0" prefHeight="80.0" prefWidth="1213.0" style="-fx-background-color: #66a3ff;" text="This is page is to maintain user accounts by admins.">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TableView fx:id="table_admin_list_users" layoutX="32.0" layoutY="164.0" prefHeight="630.0" prefWidth="1206.0">
+            <columns>
+                <TableColumn prefWidth="75.0" style="-fx-aligment: CENTER;" text="idUser">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="idUser" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="employeeNumber">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="employeeNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="employeeName">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="employeeName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="managerEmployeeNumber">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="managerEmployeeNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="managerName">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="managerName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="securityRole">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="securityRole" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userActive">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userActive" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userCreationDate">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userCreationDate" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userDeActivationDate">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userDeActivationDate" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userLatestChangeDate">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userLatestChangeDate" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userLatestChangeByUser">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userLatestChangeByUser" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userDaysAvailable">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userDaysAvailable" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userDaysTaken">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userDaysTaken" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="userDaysForYear">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userDaysForYear" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Label layoutX="42.0" layoutY="113.0" prefHeight="26.0" prefWidth="138.0" text="User e-mail:">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="admin_user_email" layoutX="133.0" layoutY="114.0" promptText="enter e-mail" />
+        <Label layoutX="292.0" layoutY="113.0" prefHeight="26.0" prefWidth="176.0" text="User employee number:">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="admin_user_email1" layoutX="478.0" layoutY="114.0" promptText="enter employee number" />
+        <Button layoutX="640.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="Search for entered user">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="817.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Create User">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="929.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="De-Activate User">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="1076.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Re-Activate User">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

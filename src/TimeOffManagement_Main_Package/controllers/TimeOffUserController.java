@@ -20,15 +20,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class TimeOffUserController implements Initializable {
-    /**
-     * Steps of the doing the DB query method:
-     * <p>
-     * #01: Create a class/task (class that extends Task) to perform the database function: query,insert..
-     * #02: If needed, initialize the task with values required to perform the action (enter variables for the query)
-     * #03: Implement the Task.call() to implement the action
-     * #04: Bind the call results to the tableview's items property
-     * #05: Invoke the task
-     */
 
     //Reference to the TableView on the time_off_user.fxml
     @FXML
@@ -85,10 +76,6 @@ public class TimeOffUserController implements Initializable {
         new Thread(task).start();
     }
 
-    /**
-     * I don't recall why, but this class has to be placed at the end of the parent class
-     * Need to revisit JAVA inheritance guide
-     */
     //#01: Create a class/task (class that extends Task) to perform the database function: query,insert..
     class getAllTimeOffs extends Task {
 
@@ -111,15 +98,9 @@ public class TimeOffUserController implements Initializable {
     @FXML
     public void listTimeOffsBetweenDates() {
         Task<ObservableList<TimeOff>> task = new getimeOffsBetweenDates();
-
         table_user_list_time_off.itemsProperty().bind(task.valueProperty());
-
         new Thread(task).start();
-
     }
-
-    //Datepicker value to string format
-    //https://stackoverflow.com/questions/33789307/how-to-convert-datepicker-value-to-string
 
     class getimeOffsBetweenDates extends Task {
 
@@ -134,7 +115,6 @@ public class TimeOffUserController implements Initializable {
                             )
                     );
         }
-
     }
 
 
@@ -150,40 +130,12 @@ public class TimeOffUserController implements Initializable {
         //Get current time
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
-        /**
-         * Need to implement duration calculation somehow
-         *
-         *         https://stackoverflow.com/questions/4600034/calculate-number-of-weekdays-between-two-dates-in-java/51010738#51010738
-         *
-         *         LocalDate startDate = LocalDate.of(2018, 5, 2);
-         *         LocalDate endDate = LocalDate.now();
-         *         Set<DayOfWeek> weekend = EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
-         *         final long weekDaysBetween = startDate.datesUntil(endDate)
-         *                 .filter(d -> !weekend.contains(d.getDayOfWeek()))
-         *                 .count();
-         *
-         *         https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-         *         for datesUntil
-         */
-
-//         * Get the 2 dates from the DatePickers
-//         * Calculate the weekdays between them
-
         //Get dates back from the 2 datepicker on the UI
         LocalDate startDate = datepicker_start_of_leave.getValue();
         LocalDate endDate = datepicker_end_of_leave.getValue();
 
         Set<DayOfWeek> weekend = EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
-        //The result of "startDate.datesUntil(endDate)" is fed to the LAMBDA expression as "d",
-        // then filter with formula:
-        // if "d" doesn't contain the days set in the weekend Set, then count them
-
-
-        //Check the dates, if Start date is after the End date
-        //value greater than 0 if this Date is after the Date argument.
-        //https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#compareTo-java.util.Date-
-        if(startDate.compareTo(endDate) > 0)
-        {
+        if (startDate.compareTo(endDate) > 0) {
             Utility.infoBox("End date is prior to Start Date! Please change it!", null, "Error in request");
             return;
         }
@@ -193,24 +145,10 @@ public class TimeOffUserController implements Initializable {
                 .count();
 
         //Check to see, if user has enough days
-
         if (UserSession.getUserSession_instance().getUser().getUserDaysAvailable() < weekDaysBetween) {
             Utility.infoBox("Not enough days, please check the dates", null, "Error in request");
             return;
         }
-
-        //* Check, if a time off is already exist for that period
-
-        //Get all the start dates and end dates out of the existing Time Offs
-        //Check if the currently selected dates are matching either list
-
-        //Get back all the time offs for the user in the session
-//        Task<ObservableList<TimeOff>> task = new getAllTimeOffs();
-//
-//        //Run the task
-//        new Thread(task).start();
-
-        //* Make the update to the DB
 
         try {
             Datasource.getDatasource_instance().insertTimeOff
@@ -247,9 +185,7 @@ public class TimeOffUserController implements Initializable {
                     newDaysAvailableForQuery
             );
             Utility.infoBox("Task ran successfully!", null, "System message");
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             Utility.infoBox("Task failed!", null, "System message");
         }
 

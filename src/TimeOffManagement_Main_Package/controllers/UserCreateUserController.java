@@ -76,31 +76,6 @@ public class UserCreateUserController implements Initializable {
         //Get current time -- use this for Creation date and Latest Change Date
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
-        //Run a query that updates the current entry
-//        Task<Integer> task = new Task<>() {
-//            @Override
-//            protected Integer call() throws Exception {
-//                return Datasource.getDatasource_instance().insertUser(
-//                        Integer.parseInt(newUserEmployeeNumber.getText()),
-//                        newUserEmployeeName.getText(),
-//                        Integer.parseInt(newUserManagerEmployeeNumber.getText()),
-//                        newUserManagerName.getText(),
-//                        newUserSecurityRole.getValue().toString(),
-//                        newUserStatus.getValue().toString(),
-//                        timeStamp,
-//                        timeStamp,
-//                        UserSession.getUserSession_instance().getUser().getEmployeeName(),
-//                        Integer.parseInt(newUserDaysForTheYear.getText()),
-//                        Integer.parseInt(newUserDaysTaken.getText()),
-//                        Integer.parseInt(newUserDaysForTheYear.getText()),
-//                        newUserUsername.getText(),
-//                        newUserPassword.getText()
-//                        );
-//            }
-//        };
-//        //Start the task
-//        new Thread(task).start();
-
         try {
             Datasource.getDatasource_instance().insertUser(
                     Integer.parseInt(newUserEmployeeNumber.getText()),
@@ -126,7 +101,6 @@ public class UserCreateUserController implements Initializable {
         Utility.changeScene("/TimeOffManagement_Main_Package/gui/time_off_admin.fxml", newUserCreateUser, getClass());
 
         Utility.infoBox("Create user was successful!", null, "System message");
-
     }
 
     @FXML

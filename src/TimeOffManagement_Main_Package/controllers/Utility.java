@@ -32,9 +32,6 @@ public class Utility {
 
     public static void changeScene(String resource, Control controller, Class clazz) {
         try {
-            //Source:
-            //https://stackoverflow.com/questions/17228487/javafx-location-is-not-set-error-message
-
             //Loader - loads the FXML (setting the resource)
             FXMLLoader loader = new FXMLLoader(clazz.getResource(resource));
             //Setting up the class loaders on the JVM - should be automatic, but have to tell the JVM what loader to use

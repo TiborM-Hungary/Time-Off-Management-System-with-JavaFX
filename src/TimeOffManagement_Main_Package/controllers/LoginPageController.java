@@ -10,15 +10,11 @@ import TimeOffManagement_Main_Package.session.UserSession;
 
 import java.sql.SQLException;
 
-//Source:
-//https://www.javaguides.net/2019/07/login-form-using-javafx-with-mysql-database.html
-
 public class LoginPageController {
 
     @FXML
     public void initialize() {
         loginButton.setDisable(true);
-        //loginButton.getParent().requestFocus();
     }
 
     @FXML
@@ -60,15 +56,9 @@ public class LoginPageController {
         if (activeUser == null) {
             Utility.infoBox("Please enter correct Email and Password", null, "Failed");
         } else {
-            //Removing dialogue on successful login, no need, just change the scene
-            //Utility.infoBox("Login Successful!", null, "Success!");
-
             //Save the logged in user as the active user for the session (UserSession class);
             // in order to get it's properties later when needed
             UserSession.getUserSession_instance().setUser(activeUser);
-
-            //Get the to the time_off_user.fxml scene
-            //https://stackoverflow.com/questions/34863425/javafx-scene-builder-how-switch-scene
 
             switch (UserSession.getUserSession_instance().getUser().getSecurityRole()) {
                 case "user":

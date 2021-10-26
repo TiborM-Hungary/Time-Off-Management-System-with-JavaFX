@@ -40,19 +40,6 @@ public class UserAdminSelectUserController implements Initializable {
     @FXML
     private Button selectUserCancel;
 
-
-    //I want to initialize via the implementation of the "initialize" by extending the Initializable class
-    //https://stackoverflow.com/questions/42942505/how-to-run-a-method-in-javafx-upon-the-opening-of-a-new-scene
-    //Example:
-    //https://stackoverflow.com/questions/34785417/javafx-fxml-controller-constructor-vs-initialize-method
-
-//    void initialize(URL location,
-//                    ResourceBundle resources)
-//    Called to initialize a controller after its root element has been completely processed.
-//            Parameters:
-//    location - The location used to resolve relative paths for the root object, or null if the location is not known.
-//    resources - The resources used to localize the root object, or null if the root object was not localized.
-
     //Populating the table with data
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -76,16 +63,9 @@ public class UserAdminSelectUserController implements Initializable {
             return FXCollections.observableArrayList
                     //If needed, initialize the task with values required to perform the action (enter variables for the query)
                     //Get the singleton class instance, call the queryArtists method, which runs the SQL query
-                    /**
-                     * Getting the employee number of the private User object in the UserSession Singletion class
-                     * #01: get the query through the singleton instance of the Datasource
-                     * #02: get the input for the query thorough the singleton of the UserSession,
-                     * which has an instance of the User class and can be set for the values returned by query
-                     */
                             (Datasource.getDatasource_instance().selectUserFromAllUsers());
         }
     }
-
 
     //Select user method - get the selected User item from the table and return it
     @FXML
@@ -102,13 +82,13 @@ public class UserAdminSelectUserController implements Initializable {
     }
 
     @FXML
-    void createUser () {
+    void createUser() {
 
         Utility.changeScene("/TimeOffManagement_Main_Package/gui/user_admin_create_user.fxml", selectUserCreateUser, getClass());
     }
 
     @FXML
-    void updateUser () {
+    void updateUser() {
         //Get the selected item into the right kind of object
         final User selectedUser = (User) selectUserTableView.getSelectionModel().getSelectedItem();
         //Get the above object into the Singleton class instance

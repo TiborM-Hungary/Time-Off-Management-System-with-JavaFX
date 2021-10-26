@@ -27,8 +27,6 @@ import java.util.Set;
 
 public class TimeOffAdminUpdateController implements Initializable {
 
-    //Pre-load combobox:
-    //https://stackoverflow.com/questions/26189984/java-fx-8-trouble-setting-the-value-of-text-field
     @FXML
     private TextField timeOffAdminUpdateEmployeeID;
 
@@ -47,10 +45,6 @@ public class TimeOffAdminUpdateController implements Initializable {
     @FXML
     private DatePicker timeOffAdminUpdateEndOfLeave;
 
-    //Combobox works!
-    //https://www.youtube.com/watch?v=YO9PQfTdbFI&ab_channel=ProgrammingKnowledge
-    //Set values of comboBox
-    //https://stackoverflow.com/questions/36758833/how-to-programmatically-set-a-string-value-in-a-javafx-combobox/36759485
     @FXML
     private ComboBox timeOffAdminUpdateLeaveStatus;
     ObservableList<String> data = FXCollections.observableArrayList("Pending Approval", "Approved", "Declined");
@@ -96,26 +90,6 @@ public class TimeOffAdminUpdateController implements Initializable {
                 .filter(d -> !weekend.contains(d.getDayOfWeek()))
                 .count();
 
-        //Run a query that updates the current entry
-//        Task<Boolean> task = new Task<Boolean>() {
-//            @Override
-//            protected Boolean call() throws Exception {
-//                return Datasource.getDatasource_instance().updateTimeOff
-//                        (
-//                                TimeOffSession.getTimeOffSession_instance().getTimeOff().getEntryNumber(),
-//                                SelectedUser.getSelectedUser_instance().getUser().getEmployeeNumber(),
-//                                timeOffAdminUpdateStartOfLeave.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
-//                                timeOffAdminUpdateEndOfLeave.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
-//                                timeOffAdminUpdateLeaveStatus.getValue().toString(),
-//                                timeStamp,
-//                                UserSession.getUserSession_instance().getUser().getEmployeeName(),
-//                                weekDaysBetween
-//                        );
-//            }
-//        };
-//
-//        new Thread(task).start();
-
         try {
             Datasource.getDatasource_instance().updateTimeOff
                     (
@@ -136,14 +110,11 @@ public class TimeOffAdminUpdateController implements Initializable {
 
         Utility.changeScene("/TimeOffManagement_Main_Package/gui/time_off_admin.fxml", timeOffAdminUpdateButtonUpdate, getClass());
 
-
     }
 
     @FXML
     public void cancel () {
-
         Utility.changeScene("/TimeOffManagement_Main_Package/gui/time_off_admin.fxml", timeOffAdminUpdateButtonCancel, getClass());
-
     }
 
 }

@@ -85,31 +85,6 @@ public class UserUpdateUserController implements Initializable {
         //Get current time -- use this for Creation date and Latest Change Date
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
-        //Run a query that updates the current entry
-//        Task<Integer> task = new Task<>() {
-//            @Override
-//            protected Integer call() throws Exception {
-//                return Datasource.getDatasource_instance().updateUser(
-//                        Integer.parseInt(updateUserEmployeeNumber.getText()),
-//                        updateUserEmployeeName.getText(),
-//                        Integer.parseInt(updateUserManagerEmployeeNumber.getText()),
-//                        updateUserManagerName.getText(),
-//                        updateUserSecurityRole.getValue().toString(),
-//                        updateUserStatus.getValue().toString(),
-//                        timeStamp,
-//                        UserSession.getUserSession_instance().getUser().getEmployeeName(),
-//                        Integer.parseInt(updateUserDaysForTheYear.getText()),
-//                        Integer.parseInt(updateUserDaysTaken.getText()),
-//                        Integer.parseInt(updateUserDaysForTheYear.getText()),
-//                        updateUserUsername.getText(),
-//                        updateUserPassword.getText(),
-//                        SelectedUser.getSelectedUser_instance().getUser().getIdUser()
-//                );
-//            }
-//        };
-//        //Start the task
-//        new Thread(task).start();
-
         try {
             Datasource.getDatasource_instance().updateUser(
                     Integer.parseInt(updateUserEmployeeNumber.getText()),
@@ -134,7 +109,6 @@ public class UserUpdateUserController implements Initializable {
         Utility.infoBox("Update user was successful!", null, "System message");
 
         Utility.changeScene("/TimeOffManagement_Main_Package/gui/time_off_admin.fxml", updateUserUpdateUser, getClass());
-
     }
 
     @FXML

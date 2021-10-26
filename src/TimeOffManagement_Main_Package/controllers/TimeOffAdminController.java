@@ -105,9 +105,6 @@ public class TimeOffAdminController {
 
     }
 
-    //Datepicker value to string format
-    //https://stackoverflow.com/questions/33789307/how-to-convert-datepicker-value-to-string
-
     class getimeOffsBetweenDates extends Task {
 
         @Override
@@ -137,18 +134,6 @@ public class TimeOffAdminController {
     public void deleteTimeOff() {
 
         final TimeOff selectedTimeOff = (TimeOff) tableViewTimeOffAdmin.getSelectionModel().getSelectedItem();
-
-//        Task<Boolean> task = new Task<Boolean>() {
-//            @Override
-//            protected Boolean call() throws Exception {
-//                return Datasource.getDatasource_instance().deleteTimeOff
-//                        (
-//                                selectedTimeOff.getEntryNumber()
-//                        );
-//            }
-//        };
-//
-//        new Thread(task).start();
 
         try {
             Datasource.getDatasource_instance().deleteTimeOff

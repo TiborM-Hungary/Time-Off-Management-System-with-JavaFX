@@ -152,19 +152,15 @@ public class TimeOffManagerController implements Initializable {
             Utility.infoBox("Decline failed!", null, "System message");
         }
 
-        //Increment user time-off by the declined amount
-
         //Calc the days available to be set on the employee profile
         int durationOfDeclinedLeave = timeOff.getDurationOfLeave();
 
         //Get the given employees days available
-
         User givenEmployee = Datasource.getDatasource_instance().specificUserEmployeeNumber(timeOff.getEmployeeNumber());
 
         int restoredNumberOfDays = givenEmployee.getUserDaysAvailable() + durationOfDeclinedLeave;
 
         //Run a query that updates the current entry
-
         try {
             Datasource.getDatasource_instance().updateUserDaysAvailableBasedOnEmployeeNumber
                     (
@@ -181,7 +177,7 @@ public class TimeOffManagerController implements Initializable {
     }
 
     @FXML
-    public void switchToUserScene () {
+    public void switchToUserScene() {
         Utility.changeScene("/TimeOffManagement_Main_Package/gui/time_off_user.fxml", managerButtonSwitchViewToUser, getClass());
     }
 
